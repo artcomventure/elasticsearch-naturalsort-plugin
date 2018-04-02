@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.xbib.elasticsearch.plugin</groupId>
     <artifactId>elasticsearch-${name}-plugin</artifactId>
-    <version>${elasticsearch}.0</version>
+    <version>${elasticsearch}.1</version>
     <packaging>jar</packaging>
     <name>elasticsearch-${name}-plugin</name>
     <description>NaturalSort Plugin</description>

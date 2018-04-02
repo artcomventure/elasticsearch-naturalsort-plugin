@@ -7,3 +7,6 @@
 /.settings
 /.classpath
 /.project
+target/archive-tmp/
+target/test-classes/
+target/classes/
