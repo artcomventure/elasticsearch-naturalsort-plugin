@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 
 public class NaturalSort extends CharTermAttributeImpl {
 
-    private final static Pattern NUMBERS = Pattern.compile("([1-9]+)", Pattern.UNICODE_CHARACTER_CLASS);
+    private final static Pattern NUMBERS = Pattern.compile("([0-9]+)", Pattern.UNICODE_CHARACTER_CLASS);
     private final Collator collator;
     private final int digits;
     private final int maxTokens;
