@@ -2,7 +2,6 @@ package de.artcom_venture.elasticsearch.naturalsort;
 
 import org.elasticsearch.index.analysis.AnalysisModule;
 import org.elasticsearch.plugins.Plugin;
-import de.artcom_venture.elasticsearch.naturalsort.NaturalSortBinderProcessor;
 
 public class NaturalSortPlugin extends Plugin {
 

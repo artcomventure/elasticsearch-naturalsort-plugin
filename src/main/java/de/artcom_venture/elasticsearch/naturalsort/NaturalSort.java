@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 
 public class NaturalSort extends CharTermAttributeImpl {
 
-    private final static Pattern NUMBERS = Pattern.compile("(\\+|\\-)?([0-9]+)");
+    private final static Pattern NUMBERS = Pattern.compile("([1-9]+)", Pattern.UNICODE_CHARACTER_CLASS);
     private final Collator collator;
     private final int digits;
     private final int maxTokens;
@@ -29,20 +29,19 @@ public class NaturalSort extends CharTermAttributeImpl {
         return ref;
     }
 
-    private String natural(String s) {
-        StringBuffer sb = new StringBuffer();
-        Matcher m = NUMBERS.matcher(s);
-        int foundTokens = 0;
-        while (m.find()) {
-            int len = m.group(2).length();
-            String repl = String.format("%0" + digits + "d", len) + m.group();
-            m.appendReplacement(sb, repl);
-            foundTokens++;
-            if (foundTokens >= maxTokens){
+    private String natural(String input) {
+        StringBuffer buffer = new StringBuffer();
+        Matcher matcher = NUMBERS.matcher(input);
+        int tokens = 0;
+        while (matcher.find()) {
+            String repl = String.format("%0" + this.digits + "d", matcher.group(1).length()) + matcher.group();
+            matcher.appendReplacement(buffer, repl);
+            tokens++;
+            if (tokens >= this.maxTokens){
                 break;
             }
         }
-        m.appendTail(sb);
-        return sb.toString();
+        matcher.appendTail(buffer);
+        return buffer.toString();
     }
 }

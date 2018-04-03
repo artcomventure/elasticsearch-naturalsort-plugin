@@ -15,7 +15,7 @@ public class NaturalSortAnalyzer extends Analyzer {
 
     @Override
     protected TokenStreamComponents createComponents(String fieldName) {
-        KeywordTokenizer tokenizer = new KeywordTokenizer(factory, KeywordTokenizer.DEFAULT_BUFFER_SIZE);
+        KeywordTokenizer tokenizer = new KeywordTokenizer(this.factory, KeywordTokenizer.DEFAULT_BUFFER_SIZE);
         return new TokenStreamComponents(tokenizer, tokenizer);
     }
 }

@@ -1,6 +1,5 @@
 package de.artcom_venture.elasticsearch.naturalsort;
 
-import org.apache.lucene.analysis.core.KeywordTokenizer;
 import org.elasticsearch.common.inject.Inject;
 import org.elasticsearch.common.inject.assistedinject.Assisted;
 import org.elasticsearch.common.settings.Settings;
@@ -25,13 +24,13 @@ public class NaturalSortAnalyzerProvider extends AbstractIndexAnalyzerProvider<N
         super(index, indexSettingsService.indexSettings(), name, settings);
         
         this.collator = createCollator(settings);
-        this.digits = settings.getAsInt("digits", 9);
+        this.digits = settings.getAsInt("digits", 1);
         this.maxTokens = settings.getAsInt("maxTokens", 5);
     }
 
     @Override
     public NaturalSortAnalyzer get() {
-        return new NaturalSortAnalyzer(collator, digits, maxTokens);
+        return new NaturalSortAnalyzer(this.collator, this.digits, this.maxTokens);
     }
 
     protected static Collator createCollator(Settings settings) {

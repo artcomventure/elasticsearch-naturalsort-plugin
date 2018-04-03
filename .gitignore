@@ -10,3 +10,4 @@
 target/archive-tmp/
 target/test-classes/
 target/classes/
+target/maven-archiver/

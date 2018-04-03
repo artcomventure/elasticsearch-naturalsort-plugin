@@ -24,6 +24,6 @@ public class NaturalSortAttributeFactory extends AttributeFactory.StaticImplemen
 
     @Override
     protected NaturalSort createInstance() {
-        return new NaturalSort(collator, digits, maxTokens);
+        return new NaturalSort(this.collator, this.digits, this.maxTokens);
     }
 }
