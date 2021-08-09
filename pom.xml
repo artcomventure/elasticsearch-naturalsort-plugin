@@ -11,7 +11,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <elasticsearch>2.4.6</elasticsearch>
+        <elasticsearch>6.8.17</elasticsearch>
         <compiler>1.8</compiler>
         <name>naturalsort</name>
     </properties>
